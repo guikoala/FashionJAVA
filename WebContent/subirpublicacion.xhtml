@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+   		<h:head>SUBIR PUBLICACION</h:head>
+		
+		<h:body>
+		<h1>SUBIR UNA PUBLICACION</h1><br/>
+		<h:form>
+		
+		Titulo: 
+		<h:inputText value="#{publicacionBean.publicacion.titulo}" /><br/>
+		
+		Descripcion: 
+		<h:inputText value="#{publicacionBean.publicacion.descripcion}" /><br/>
+		
+		Adjuntar archivos multimedia: <br/>
+		
+		Añadir etiqueta: <br/>
+		Marca:
+		<h:selectOneMenu value="#{publicacionBean.publicacion.etiquetaBean.marca}">
+			<f:selectItem itemValue="zara" itemLabel="Zara"/>
+			<f:selectItem itemValue="brandy" itemLabel="Brandy Melville"/>
+		</h:selectOneMenu><br/>
+		Color:
+		<h:selectManyMenu  value="#{publicacionBean.publicacion.etiquetaBean.color}">
+			<f:selectItem itemValue="rojo" itemLabel="Rojo"/>
+			<f:selectItem itemValue="azul" itemLabel="Azul"/>
+			<f:selectItem itemValue="amarillo" itemLabel="Amarillo"/>
+			<f:selectItem itemValue="blanco" itemLabel="Blanco"/>
+		</h:selectManyMenu><br/>
+		Descripcion:
+		<h:inputText value="#{publicacionBean.publicacion.etiquetaBean.descripcion}" /><br/>
+		
+		<h:commandButton actionListener="#{publicacionBean.addPublicacion()}" value="Publicar" /><br/>
+		<h:outputText value="Se ha publicado correctamente." rendered="#{publicacionBean.added}" /><br/>
+		</h:form>
+		
+		
+		</h:body>
+		
+</html>
