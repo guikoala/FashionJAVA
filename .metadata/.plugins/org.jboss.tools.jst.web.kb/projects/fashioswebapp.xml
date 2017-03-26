@@ -115,9 +115,35 @@
   <path value="/Users/guillermoaguirre/Desktop/Fashionmicarpeta/wildfly-10.1.0.Final/modules/system/layers/base/javax/ejb/api/main/jboss-ejb-api_3.2_spec-1.0.0.Final.jar"/>
  </paths>
  <validation>
-  <el/>
+  <core validator-id="jsf-verification"/>
+  <core validator-id="jboss.cdi.core"/>
+  <core validator-id="batch-verification"/>
+  <el>
+   <linked-el length="40" name="%0" offset="451" path="%1"/>
+   <linked-el length="27" name="%0" offset="799" path="%1"/>
+   <linked-el length="38" name="%0" offset="672" path="%1"/>
+   <linked-el length="45" name="%0" offset="539" path="%1"/>
+   <linked-el length="40" name="%2" offset="451" path="%1"/>
+   <linked-el length="45" name="%2" offset="539" path="%1"/>
+   <linked-el length="40" name="%3" offset="451" path="%1"/>
+   <linked-el length="27" name="%3" offset="799" path="%1"/>
+   <linked-el length="38" name="%3" offset="672" path="%1"/>
+   <linked-el length="45" name="%3" offset="539" path="%1"/>
+  </el>
  </validation>
- <aliases/>
+ <aliases>
+  <alias path="/fashioswebapp/src/presentacion/PublicacionBean.java" value="%0"/>
+  <alias path="/fashioswebapp/WebContent/subirpublicacion.xhtml" value="%1"/>
+  <alias path="/fashioswebapp/src/datos/Publicacion.java" value="%2"/>
+  <alias path="publicacionBean" value="%3"/>
+ </aliases>
  <includes/>
- <uris/>
+ <uris>
+  <uri value="http://java.sun.com/jsf/core">
+   <prefix>f</prefix>
+  </uri>
+  <uri value="http://java.sun.com/jsf/html">
+   <prefix>h</prefix>
+  </uri>
+ </uris>
 </kb-project>

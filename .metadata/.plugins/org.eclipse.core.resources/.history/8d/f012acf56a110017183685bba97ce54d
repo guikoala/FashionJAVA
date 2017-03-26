@@ -1,0 +1,330 @@
+package datos;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.List;
+
+
+/**
+ * The persistent class for the Usuario database table.
+ * 
+ */
+@Entity
+@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
+public class Usuario implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	private int idUser;
+
+	private String email;
+
+	@Lob
+	private byte[] foto;
+
+	private String nombreCompleto;
+
+	private int nPost;
+
+	private int nValoraciones;
+
+	private String password;
+
+	private byte tipoPerfil;
+
+	private String userName;
+
+	private float valoracionMedia;
+
+	//bi-directional many-to-one association to Amigo
+	@OneToMany(mappedBy="usuario1")
+	private List<Amigo> amigos1;
+
+	//bi-directional many-to-one association to Amigo
+	@OneToMany(mappedBy="usuario2")
+	private List<Amigo> amigos2;
+
+	//bi-directional many-to-one association to Comentario
+	@OneToMany(mappedBy="usuario")
+	private List<Comentario> comentarios;
+
+	//bi-directional many-to-one association to Like
+	@OneToMany(mappedBy="usuario")
+	private List<Like> likes;
+
+	//bi-directional many-to-one association to Notificacion
+	@OneToMany(mappedBy="usuario1")
+	private List<Notificacion> notificacions1;
+
+	//bi-directional many-to-one association to Notificacion
+	@OneToMany(mappedBy="usuario2")
+	private List<Notificacion> notificacions2;
+
+	//bi-directional many-to-one association to Publicacion
+	@OneToMany(mappedBy="usuario")
+	private List<Publicacion> publicacions;
+
+	//bi-directional many-to-one association to Valoracion
+	@OneToMany(mappedBy="usuario")
+	private List<Valoracion> valoracions;
+
+	public Usuario() {
+	}
+
+	public int getIdUser() {
+		return this.idUser;
+	}
+
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public byte[] getFoto() {
+		return this.foto;
+	}
+
+	public void setFoto(byte[] foto) {
+		this.foto = foto;
+	}
+
+	public String getNombreCompleto() {
+		return this.nombreCompleto;
+	}
+
+	public void setNombreCompleto(String nombreCompleto) {
+		this.nombreCompleto = nombreCompleto;
+	}
+
+	public int getNPost() {
+		return this.nPost;
+	}
+
+	public void setNPost(int nPost) {
+		this.nPost = nPost;
+	}
+
+	public int getNValoraciones() {
+		return this.nValoraciones;
+	}
+
+	public void setNValoraciones(int nValoraciones) {
+		this.nValoraciones = nValoraciones;
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public byte getTipoPerfil() {
+		return this.tipoPerfil;
+	}
+
+	public void setTipoPerfil(byte tipoPerfil) {
+		this.tipoPerfil = tipoPerfil;
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public float getValoracionMedia() {
+		return this.valoracionMedia;
+	}
+
+	public void setValoracionMedia(float valoracionMedia) {
+		this.valoracionMedia = valoracionMedia;
+	}
+
+	public List<Amigo> getAmigos1() {
+		return this.amigos1;
+	}
+
+	public void setAmigos1(List<Amigo> amigos1) {
+		this.amigos1 = amigos1;
+	}
+
+	public Amigo addAmigos1(Amigo amigos1) {
+		getAmigos1().add(amigos1);
+		amigos1.setUsuario1(this);
+
+		return amigos1;
+	}
+
+	public Amigo removeAmigos1(Amigo amigos1) {
+		getAmigos1().remove(amigos1);
+		amigos1.setUsuario1(null);
+
+		return amigos1;
+	}
+
+	public List<Amigo> getAmigos2() {
+		return this.amigos2;
+	}
+
+	public void setAmigos2(List<Amigo> amigos2) {
+		this.amigos2 = amigos2;
+	}
+
+	public Amigo addAmigos2(Amigo amigos2) {
+		getAmigos2().add(amigos2);
+		amigos2.setUsuario2(this);
+
+		return amigos2;
+	}
+
+	public Amigo removeAmigos2(Amigo amigos2) {
+		getAmigos2().remove(amigos2);
+		amigos2.setUsuario2(null);
+
+		return amigos2;
+	}
+
+	public List<Comentario> getComentarios() {
+		return this.comentarios;
+	}
+
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
+	}
+
+	public Comentario addComentario(Comentario comentario) {
+		getComentarios().add(comentario);
+		comentario.setUsuario(this);
+
+		return comentario;
+	}
+
+	public Comentario removeComentario(Comentario comentario) {
+		getComentarios().remove(comentario);
+		comentario.setUsuario(null);
+
+		return comentario;
+	}
+
+	public List<Like> getLikes() {
+		return this.likes;
+	}
+
+	public void setLikes(List<Like> likes) {
+		this.likes = likes;
+	}
+
+	public Like addLike(Like like) {
+		getLikes().add(like);
+		like.setUsuario(this);
+
+		return like;
+	}
+
+	public Like removeLike(Like like) {
+		getLikes().remove(like);
+		like.setUsuario(null);
+
+		return like;
+	}
+
+	public List<Notificacion> getNotificacions1() {
+		return this.notificacions1;
+	}
+
+	public void setNotificacions1(List<Notificacion> notificacions1) {
+		this.notificacions1 = notificacions1;
+	}
+
+	public Notificacion addNotificacions1(Notificacion notificacions1) {
+		getNotificacions1().add(notificacions1);
+		notificacions1.setUsuario1(this);
+
+		return notificacions1;
+	}
+
+	public Notificacion removeNotificacions1(Notificacion notificacions1) {
+		getNotificacions1().remove(notificacions1);
+		notificacions1.setUsuario1(null);
+
+		return notificacions1;
+	}
+
+	public List<Notificacion> getNotificacions2() {
+		return this.notificacions2;
+	}
+
+	public void setNotificacions2(List<Notificacion> notificacions2) {
+		this.notificacions2 = notificacions2;
+	}
+
+	public Notificacion addNotificacions2(Notificacion notificacions2) {
+		getNotificacions2().add(notificacions2);
+		notificacions2.setUsuario2(this);
+
+		return notificacions2;
+	}
+
+	public Notificacion removeNotificacions2(Notificacion notificacions2) {
+		getNotificacions2().remove(notificacions2);
+		notificacions2.setUsuario2(null);
+
+		return notificacions2;
+	}
+
+	public List<Publicacion> getPublicacions() {
+		return this.publicacions;
+	}
+
+	public void setPublicacions(List<Publicacion> publicacions) {
+		this.publicacions = publicacions;
+	}
+
+	public Publicacion addPublicacion(Publicacion publicacion) {
+		getPublicacions().add(publicacion);
+		publicacion.setUsuario(this);
+
+		return publicacion;
+	}
+
+	public Publicacion removePublicacion(Publicacion publicacion) {
+		getPublicacions().remove(publicacion);
+		publicacion.setUsuario(null);
+
+		return publicacion;
+	}
+
+	public List<Valoracion> getValoracions() {
+		return this.valoracions;
+	}
+
+	public void setValoracions(List<Valoracion> valoracions) {
+		this.valoracions = valoracions;
+	}
+
+	public Valoracion addValoracion(Valoracion valoracion) {
+		getValoracions().add(valoracion);
+		valoracion.setUsuario(this);
+
+		return valoracion;
+	}
+
+	public Valoracion removeValoracion(Valoracion valoracion) {
+		getValoracions().remove(valoracion);
+		valoracion.setUsuario(null);
+
+		return valoracion;
+	}
+
+}

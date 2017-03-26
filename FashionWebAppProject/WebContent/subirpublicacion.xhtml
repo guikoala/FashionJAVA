@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+   		<h:head>SUBIR PUBLICACION</h:head>
+		
+		<h:body>
+		<h1>SUBIR UNA PUBLICACION</h1><br/>
+		<h:form>
+		
+		Titulo: 
+		<h:inputText value="#{publicacionBean.publicacion.titulo}" /><br/>
+		
+		Descripcion: 
+		<h:inputText value="#{publicacionBean.publicacion.descripcion}" /><br/>
+		
+		Adjuntar archivos multimedia: <br/>
+		
+	
+		<h:commandButton actionListener="#{publicacionBean.addPublicacion()}" value="Publicar" /><br/>
+		<h:outputText value="Se ha publicado correctamente." rendered="#{publicacionBean.added}" /><br/>
+		</h:form>
+		
+		
+		</h:body>
+		
+</html>

@@ -1,0 +1,57 @@
+package datos;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+
+/**
+ * The persistent class for the Amigos database table.
+ * 
+ */
+@Entity
+@Table(name="Amigos")
+@NamedQuery(name="Amigo.findAll", query="SELECT a FROM Amigo a")
+public class Amigo implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	private int idAmigos;
+
+	//bi-directional many-to-one association to Usuario
+	@ManyToOne
+	@JoinColumn(name="usuarioSigue")
+	private Usuario usuario1;
+
+	//bi-directional many-to-one association to Usuario
+	@ManyToOne
+	@JoinColumn(name="usuarioSeguido")
+	private Usuario usuario2;
+
+	public Amigo() {
+	}
+
+	public int getIdAmigos() {
+		return this.idAmigos;
+	}
+
+	public void setIdAmigos(int idAmigos) {
+		this.idAmigos = idAmigos;
+	}
+
+	public Usuario getUsuario1() {
+		return this.usuario1;
+	}
+
+	public void setUsuario1(Usuario usuario1) {
+		this.usuario1 = usuario1;
+	}
+
+	public Usuario getUsuario2() {
+		return this.usuario2;
+	}
+
+	public void setUsuario2(Usuario usuario2) {
+		this.usuario2 = usuario2;
+	}
+
+}
