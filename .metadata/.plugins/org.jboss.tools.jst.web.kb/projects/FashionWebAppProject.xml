@@ -82,6 +82,7 @@
   <core validator-id="jsf-verification"/>
   <core validator-id="jboss.cdi.core"/>
   <core validator-id="batch-verification"/>
+  <core validator-id="jboss.jsf.core"/>
   <el>
    <linked-el length="21" name="%0" offset="908" path="%1"/>
    <linked-el length="22" name="%0" offset="525" path="%1"/>
@@ -102,14 +103,15 @@
    <linked-el length="31" name="%4" offset="780" path="%3"/>
    <linked-el length="26" name="%4" offset="680" path="%3"/>
    <linked-el length="42" name="%4" offset="569" path="%3"/>
-   <linked-el length="27" name="%5" offset="2375" path="%6"/>
-   <linked-el length="40" name="%5" offset="473" path="%6"/>
-   <linked-el length="40" name="%5" offset="729" path="%6"/>
-   <linked-el length="47" name="%5" offset="2138" path="%6"/>
-   <linked-el length="42" name="%5" offset="2234" path="%6"/>
-   <linked-el length="41" name="%5" offset="1715" path="%6"/>
-   <linked-el length="45" name="%5" offset="566" path="%6"/>
-   <linked-el length="40" name="%5" offset="1199" path="%6"/>
+   <linked-el length="41" name="%5" offset="1677" path="%6"/>
+   <linked-el length="45" name="%5" offset="567" path="%6"/>
+   <linked-el length="40" name="%5" offset="1161" path="%6"/>
+   <linked-el length="40" name="%5" offset="474" path="%6"/>
+   <linked-el length="26" name="%5" offset="2442" path="%6"/>
+   <linked-el length="40" name="%5" offset="691" path="%6"/>
+   <linked-el length="47" name="%5" offset="2100" path="%6"/>
+   <linked-el length="42" name="%5" offset="2196" path="%6"/>
+   <linked-el length="27" name="%5" offset="2337" path="%6"/>
    <linked-el length="28" name="%7" offset="720" path="%2"/>
    <linked-el length="34" name="%7" offset="454" path="%2"/>
    <linked-el length="34" name="%7" offset="534" path="%2"/>
@@ -122,26 +124,27 @@
    <linked-el length="31" name="%8" offset="757" path="%2"/>
    <linked-el length="40" name="%8" offset="616" path="%2"/>
    <linked-el length="30" name="%8" offset="862" path="%2"/>
+   <linked-el length="41" name="%9" offset="1677" path="%6"/>
+   <linked-el length="45" name="%9" offset="567" path="%6"/>
    <linked-el length="27" name="%9" offset="879" path="%3"/>
-   <linked-el length="40" name="%9" offset="473" path="%6"/>
-   <linked-el length="40" name="%9" offset="729" path="%6"/>
-   <linked-el length="47" name="%9" offset="2138" path="%6"/>
+   <linked-el length="40" name="%9" offset="1161" path="%6"/>
+   <linked-el length="40" name="%9" offset="474" path="%6"/>
    <linked-el length="31" name="%9" offset="780" path="%3"/>
-   <linked-el length="41" name="%9" offset="1715" path="%6"/>
-   <linked-el length="45" name="%9" offset="566" path="%6"/>
+   <linked-el length="40" name="%9" offset="691" path="%6"/>
+   <linked-el length="47" name="%9" offset="2100" path="%6"/>
    <linked-el length="26" name="%9" offset="680" path="%3"/>
-   <linked-el length="40" name="%9" offset="1199" path="%6"/>
    <linked-el length="42" name="%9" offset="569" path="%3"/>
    <linked-el length="39" name="%10" offset="436" path="%3"/>
    <linked-el length="31" name="%10" offset="426" path="%1"/>
-   <linked-el length="27" name="%11" offset="2375" path="%6"/>
-   <linked-el length="40" name="%11" offset="473" path="%6"/>
-   <linked-el length="40" name="%11" offset="729" path="%6"/>
-   <linked-el length="47" name="%11" offset="2138" path="%6"/>
-   <linked-el length="42" name="%11" offset="2234" path="%6"/>
-   <linked-el length="41" name="%11" offset="1715" path="%6"/>
-   <linked-el length="45" name="%11" offset="566" path="%6"/>
-   <linked-el length="40" name="%11" offset="1199" path="%6"/>
+   <linked-el length="41" name="%11" offset="1677" path="%6"/>
+   <linked-el length="45" name="%11" offset="567" path="%6"/>
+   <linked-el length="40" name="%11" offset="1161" path="%6"/>
+   <linked-el length="40" name="%11" offset="474" path="%6"/>
+   <linked-el length="26" name="%11" offset="2442" path="%6"/>
+   <linked-el length="40" name="%11" offset="691" path="%6"/>
+   <linked-el length="47" name="%11" offset="2100" path="%6"/>
+   <linked-el length="42" name="%11" offset="2196" path="%6"/>
+   <linked-el length="27" name="%11" offset="2337" path="%6"/>
   </el>
  </validation>
  <aliases>
@@ -161,6 +164,9 @@
  </aliases>
  <includes/>
  <uris>
+  <uri value="http://xmlns.jcp.org/jsf/html">
+   <prefix>h</prefix>
+  </uri>
   <uri value="http://java.sun.com/jsf/core">
    <prefix>f</prefix>
   </uri>

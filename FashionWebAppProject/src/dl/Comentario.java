@@ -1,4 +1,4 @@
-package datos;
+package dl;
 
 import java.io.Serializable;
 import javax.persistence.*;
